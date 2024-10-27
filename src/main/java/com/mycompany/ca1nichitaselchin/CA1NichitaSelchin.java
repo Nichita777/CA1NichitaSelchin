@@ -122,19 +122,19 @@ public class CA1NichitaSelchin {
 
     public static void processCustomerFile(String inputFilePath, String outputFilePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(inputFilePath)); BufferedWriter bw = new BufferedWriter(new FileWriter(outputFilePath))) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        } catch (IOException e) {
+
+            String firstName, secondName, purchase, customerClass, lastPurchase;
+
+            while ((firstName = br.readLine()) != null) {
+                System.out.println("Processing customer: " + firstName);  // Debugging: Show customer being processed
+
+                
+                
+                
+                
+            }catch (IOException e) {
             System.out.println("Error processing the file: " + e.getMessage());
         }
-    }
+        }
 
-}
+    }
