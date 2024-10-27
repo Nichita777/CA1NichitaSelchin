@@ -164,10 +164,16 @@ public class CA1NichitaSelchin {
                 }
                 // Calculate the final value after discount
                 double finalValue = calculateDiscount(Double.parseDouble(purchase), Integer.parseInt(customerClass), Integer.parseInt(lastPurchase));
+                System.out.println("Final value for " + firstName + " " + secondName + ": " + finalValue);  // Debugging
 
-            }catch (IOException e) {
+                // Write the results to the output file
+                bw.write(firstName + " " + secondName + "\n");
+                bw.write(String.format("%.2f", finalValue) + "\n");
+            }
+
+        } catch (IOException e) {
             System.out.println("Error processing the file: " + e.getMessage());
         }
-        }
-
     }
+
+}
