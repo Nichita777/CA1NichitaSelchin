@@ -141,6 +141,28 @@ public class CA1NichitaSelchin {
 
                 System.out.println("Purchase: " + purchase + ", Class: " + customerClass + ", Last Purchase: " + lastPurchase); // Debugging
 
+                // Validate inputs
+                if (!validateFirstName(firstName)) {
+                    System.out.println("Error: Invalid first name '" + firstName + "'");
+                    continue;
+                }
+                if (!validateSecondName(secondName)) {
+                    System.out.println("Error: Invalid second name '" + secondName + "'");
+                    continue;
+                }
+                if (!validatePurchase(purchase)) {
+                    System.out.println("Error: Invalid purchase value '" + purchase + "'");
+                    continue;
+                }
+                if (!validateClass(customerClass)) {
+                    System.out.println("Error: Invalid class '" + customerClass + "'");
+                    continue;
+                }
+                if (!validateYear(lastPurchase)) {
+                    System.out.println("Error: Invalid last purchase year '" + lastPurchase + "'");
+                    continue;
+                }
+
             }catch (IOException e) {
             System.out.println("Error processing the file: " + e.getMessage());
         }
