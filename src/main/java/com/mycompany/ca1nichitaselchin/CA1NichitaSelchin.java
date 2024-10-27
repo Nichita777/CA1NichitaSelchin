@@ -118,5 +118,23 @@ public class CA1NichitaSelchin {
                 return purchase;
         }
     }
+    // Main method to process the file and apply discounts
+
+    public static void processCustomerFile(String inputFilePath, String outputFilePath) {
+        try (BufferedReader br = new BufferedReader(new FileReader(inputFilePath)); BufferedWriter bw = new BufferedWriter(new FileWriter(outputFilePath))) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        } catch (IOException e) {
+            System.out.println("Error processing the file: " + e.getMessage());
+        }
+    }
 
 }
