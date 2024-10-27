@@ -127,11 +127,20 @@ public class CA1NichitaSelchin {
 
             while ((firstName = br.readLine()) != null) {
                 System.out.println("Processing customer: " + firstName);  // Debugging: Show customer being processed
+                String[] nameParts = firstName.split(" ");
+                if (nameParts.length != 2) {
+                    System.out.println("Error: Invalid name format for '" + firstName + "'");
+                    continue;
+                }
 
-                
-                
-                
-                
+                secondName = nameParts[1];
+                firstName = nameParts[0];
+                purchase = br.readLine();
+                customerClass = br.readLine();
+                lastPurchase = br.readLine();
+
+                System.out.println("Purchase: " + purchase + ", Class: " + customerClass + ", Last Purchase: " + lastPurchase); // Debugging
+
             }catch (IOException e) {
             System.out.println("Error processing the file: " + e.getMessage());
         }
