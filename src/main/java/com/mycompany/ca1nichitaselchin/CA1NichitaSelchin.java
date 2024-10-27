@@ -162,6 +162,8 @@ public class CA1NichitaSelchin {
                     System.out.println("Error: Invalid last purchase year '" + lastPurchase + "'");
                     continue;
                 }
+                // Calculate the final value after discount
+                double finalValue = calculateDiscount(Double.parseDouble(purchase), Integer.parseInt(customerClass), Integer.parseInt(lastPurchase));
 
             }catch (IOException e) {
             System.out.println("Error processing the file: " + e.getMessage());
