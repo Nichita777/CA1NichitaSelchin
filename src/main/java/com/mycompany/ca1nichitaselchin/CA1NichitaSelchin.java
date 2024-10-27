@@ -40,10 +40,10 @@ public class CA1NichitaSelchin {
     public static void main(String[] args) {
         // Print the curent working directory to help locate the files
         System.out.println("Current working directory: " + System.getProperty("user.dir"));
-       // Define input and output file paths
-        String inputFilePath = "customers.txt"; 
-        String outputFilePath = "customerdiscount.txt"; 
-       // process the input file to calculate and write discounts
+        // Define input and output file paths
+        String inputFilePath = "customers.txt";
+        String outputFilePath = "customerdiscount.txt";
+        // process the input file to calculate and write discounts
         processCustomerFile(inputFilePath, outputFilePath);
     }
 
@@ -56,7 +56,7 @@ public class CA1NichitaSelchin {
     public static boolean validateSecondName(String secondName) {
         return secondName.matches("[a-zA-Z0-9]+");
     }
-    
+
     // Validate purchase 
     public static boolean validatePurchase(String purchase) {
         try {
@@ -86,4 +86,37 @@ public class CA1NichitaSelchin {
             return false;
         }
     }
+    // Calculate discount based on class and last purchase year
+
+    public static double calculateDiscount(double purchase, int customerClass, int lastPurchase) {
+        int currentYear = 2024;
+
+        switch (customerClass) {
+            case 1:
+                if (lastPurchase == currentYear) {
+                    return purchase * 0.70; // 30% discount
+                } else if (lastPurchase < currentYear && lastPurchase >= currentYear - 5) {
+                    return purchase * 0.80; // 20% discount
+                } else {
+                    return purchase * 0.90; // 10% discount
+                }
+            case 2:
+                if (lastPurchase == currentYear) {
+                    return purchase * 0.85; // 15% discount
+                } else if (lastPurchase < currentYear && lastPurchase >= currentYear - 5) {
+                    return purchase * 0.87; // 13% discount
+                } else {
+                    return purchase * 0.95; // 5% discount
+                }
+            case 3:
+                if (lastPurchase == currentYear) {
+                    return purchase * 0.97; // 3% discount
+                } else {
+                    return purchase; // No discount
+                }
+            default:
+                return purchase;
+        }
+    }
+
 }
